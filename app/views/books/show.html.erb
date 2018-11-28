@@ -1,0 +1,8 @@
+<h2>
+<%= @book.title %> (<%= @book.pages %> pages)
+</h2>
+
+
+
+<%= link_to "Edit #{@book.title}", edit_book_path %>
+<%= button_to "Delete #{@book.title}", @book, method: :delete %>
