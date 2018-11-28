@@ -1,5 +1,8 @@
-<h1>Author</h1>
+<h2>
+<%= @author.name %> (b.<%= @author.birth_year %>)
+</h2>
 
-<% @author.name %>
-<% @author.birth_year %>
-<%= button_to "Edit Author", @author, method: :get %>
+
+
+<%= link_to "Edit #{@author.name}", edit_author_path %>
+<%= button_to "Delete #{@author.name}", @author, method: :delete %>

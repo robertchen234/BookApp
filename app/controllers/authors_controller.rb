@@ -1,6 +1,6 @@
 class AuthorsController < ApplicationController
 
-  before_action :authors :only[:show, :edit, :create, :update, :destroy]
+  before_action :find_author, only: [:show, :edit, :update, :destroy]
 
   def index
     @authors = Author.all
@@ -13,7 +13,7 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new(author_params)
 
-    if @author.save?
+    if @author.save
       redirect_to @author
     else
       render :new
@@ -27,8 +27,11 @@ class AuthorsController < ApplicationController
   end
 
   def update
-    @author.update(author_params)
-    redirect_to @author
+    if @author.update(author_params)
+      redirect_to @author
+    else
+      render :new
+    end
   end
 
   def destroy
