@@ -1,4 +1,5 @@
 class AuthorsController < ApplicationController
+
   before_action :authors :only[:show, :edit, :create, :update, :destroy]
 
   def index
@@ -43,5 +44,6 @@ class AuthorsController < ApplicationController
   def author_params
     params.require(:author).permit(:name, :birth_year)
   end
+
 
 end
