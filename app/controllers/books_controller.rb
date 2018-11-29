@@ -1,3 +1,5 @@
+require 'byebug'
+
 class BooksController < ApplicationController
 
   before_action :find_book, only: [:show, :edit, :update, :destroy]
@@ -21,6 +23,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    @write = Write.new
+    @authors = Author.all
   end
 
   def edit

@@ -1,3 +1,5 @@
+require 'byebug'
+
 class WritesController < ApplicationController
   before_action :find_write, only: [:show, :edit, :update, :destroy]
 

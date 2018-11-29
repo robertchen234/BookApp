@@ -1,8 +1,17 @@
+
+
 <h2>
 <%= @book.title %> (<%= @book.pages %> pages)
 </h2>
 
+<p>Authors:</p>
+<ul>
+<li>
+  <% @book.authors.each do |author| %>
+    <%= author.name %> (b. <%= author.birth_year %>)
+    <%= button_to "Remove author", authors_path, method: :delete %>
+  <% end %>
+</li>
+</ul>
 
-
-<%= link_to "Edit #{@book.title}", edit_book_path %>
-<%= button_to "Delete #{@book.title}", @book, method: :delete %>
+<%= render "writes/form" %>
