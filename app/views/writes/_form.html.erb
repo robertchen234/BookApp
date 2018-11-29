@@ -1,0 +1,3 @@
+<%= form_for @write do |f| %>
+  Author <%= f.collection_select :author_id, @authors, :id, :name %> <%= f.submit %>
+<% end %>

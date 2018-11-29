@@ -1,11 +1,9 @@
-<h1>Here are all the books:</h1>
-
-<%= button_to "Create Book", new_book_path, method: :get %>
+<h1>Books!</h1>
 
 <ul>
 <% @books.each do |book| %>
   <li>
-    <%= link_to book.name, book %> (b. <%= book.title%>)
+    <%= link_to book.title, book %> (b. <%= book.title%>)
   </li>
 <% end %>
 </ul>

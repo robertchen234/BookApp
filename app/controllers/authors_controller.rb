@@ -3,7 +3,7 @@ class AuthorsController < ApplicationController
   before_action :find_author, only: [:show, :edit, :update, :destroy]
 
   def index
-    @authors = Author.all
+    @authors = Author.includes(:books).all
   end
 
   def new
@@ -21,6 +21,7 @@ class AuthorsController < ApplicationController
   end
 
   def show
+    @authors = Author.all
   end
 
   def edit

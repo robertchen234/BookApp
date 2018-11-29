@@ -1,4 +1,6 @@
-<h1>Here are all the authors:</h1>
+<h1>Authors!</h1>
+
+<%= link_to "New Author", new_author_path %>
 
 <ul>
 <% @authors.each do |author| %>
@@ -7,5 +9,3 @@
   </li>
 <% end %>
 </ul>
-
-<%= button_to "Create Author", new_author_path, method: :get %>
