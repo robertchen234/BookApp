@@ -1,3 +1,4 @@
 <%= form_for @write do |f| %>
+  <%= f.hidden_field :book_id, :value => @book.id %>
   Author <%= f.collection_select :author_id, @authors, :id, :name %> <%= f.submit %>
 <% end %>
